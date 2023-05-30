@@ -86,10 +86,10 @@ def check_tg(message):
         db = sqlite3.connect('table.db')
         cur = db.cursor()
         
-        # Генерация уникального ключа
+        
         string = key_gen()
         while True:
-            # Проверка наличия ключа в базе данных
+            
             cur.execute("SELECT COUNT(*) FROM users WHERE key = ?", (string,))
             result = cur.fetchone()[0]
             if result == 0:
